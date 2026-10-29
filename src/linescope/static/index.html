@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LineScope Quotes · 每个数值都有自己的明细范围</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><main>
+<header><p class="eyebrow">LOCAL AI · EVIDENCE CHECKS</p><h1>LineScope <span>Quotes</span></h1>
+<p class="lead">这个数字在原文里，<strong>但真的属于这一行吗？</strong></p>
+<p>让 AI 抽取设备报价，用代码核验明细范围与金额，把判断留给有证据的复核。</p></header>
+<div class="scope">v0.1 本地单人预览 · 人民币简单报价 · 输入为文本逻辑页 · 示例为手工模拟候选，非模型实测</div>
+<nav aria-label="演示场景"><button id="normal">① 正常报价</button><button id="arithmetic">② 原文少计 300 元</button><button id="crossrow">③ 引用串到另一行</button></nav>
+<div class="columns"><section><h2>01 / 来源文本</h2><label for="source">逻辑第 1 页（编辑来源后会建立新记录）</label>
+<textarea id="source" spellcheck="false"></textarea><pre id="source-preview" aria-label="来源引用定位"></pre>
+<p class="subtle">MVP 仅接收文本；没有 PDF 解析、OCR 或扫描件识别。</p>
+<button id="extract">使用已配置的本地 Ollama 抽取</button></section>
+<section><h2>02 / 候选抽取</h2><label for="candidate">可编辑 JSON · 数值必须是字符串</label><textarea id="candidate" spellcheck="false"></textarea>
+<details><summary>复核确认（AI 无权代填）</summary><label class="check"><input type="checkbox" id="coverage">我已对照来源确认明细完整且没有串行</label>
+<label class="check"><input type="checkbox" id="pricing">我已确认这是无额外税费、运费、折扣的单币种报价</label>
+<label for="reviewer">复核者标记（自行填写，非身份认证）</label><input id="reviewer" maxlength="80" placeholder="例如：本地复核者">
+<label for="reason">复核依据 / 修改原因</label><input id="reason" maxlength="500" placeholder="记录你实际核对的内容"></details>
+<button id="verify" class="primary">核验并保存新版本 →</button></section></div>
+<section class="result"><div class="result-head"><h2>03 / 可复核的结果</h2><span id="verdict" class="badge">尚未核验</span></div>
+<p id="message" role="status">选择一个场景，然后点击核验。模型未配置时仍可运行确定性演示。</p>
+<div id="calculations"></div><div id="findings"></div><div id="anchors"></div>
+<div id="record"></div><a id="download" hidden>导出本次证据与报告 JSON</a></section>
+<footer>“限定检查通过”只表示已确认范围内的规则通过。引用存在不证明语义正确，也不证明报价真实或适合采购。</footer>
+</main><script src="/static/app.js" defer></script></body></html>
