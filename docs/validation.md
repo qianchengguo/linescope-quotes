@@ -56,3 +56,11 @@
 ## 独立复现入口
 
 安装后先运行 `python -m pytest -q` 和 `python scripts/evaluate.py`，再打开本地页面的三个场景。若验证真实AI，按operations.md启动本地模型、指定正确端口，再运行live_smoke；每次输出可能不同，逐字段对照原文。下载JSON后用replay复算。先读本机结果与限制，再决定可以在简历中写哪些个人已验收的能力。
+
+## 干净克隆与软件包补充验证
+
+对本地提交 `0971a1b` 执行 `git clone --no-local . .local/clone-check`，另建全新venv，安装该克隆的`.[dev]`：**55 passed / 1 warning**，8/8合成规则结果符合预期，wheel/sdist实际构建成功。随后在该新环境卸载editable安装、安装构建的wheel，并从克隆目录之外导入，确认模块来自site-packages；内置HTML/JS、demo读取和API创建待复核记录均通过。
+
+这是**本地干净克隆和安装验收**，不是GitHub公开clone或Windows验收。后续改动仅为验证记录和演示截图裁切；运行代码对应上述提交及之前代码提交。临时测试环境和原始日志留在被忽略的`.local`。
+
+Docker测试项目`linescope-review`验证结束后已停止其app容器，保留命名卷和现有Docker Desktop；本机原生服务8765与项目专用Ollama11435保留供检查。官方Docker DMG测试挂载已正常卸载，下载文件保留。
