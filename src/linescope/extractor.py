@@ -49,7 +49,7 @@ def extract(document: Document, base_url: str, model: str,
         raise ExtractionError("MODEL_NOT_CONFIGURED")
     schema = Extraction.model_json_schema()
     payload = {
-        "model": model, "stream": False, "format": schema,
+        "model": model, "stream": False, "think": False, "format": schema,
         "options": {"temperature": 0, "num_ctx": 16384, "num_predict": 8192},
         "messages": [
             {"role": "system", "content": SYSTEM + "\nSchema: " + json.dumps(schema)},

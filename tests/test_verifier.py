@@ -120,3 +120,31 @@ def test_item_amount_cannot_be_used_as_document_total(case, checked):
     case["extraction"]["total"] = case["extraction"]["items"][0]["amount"]
     report = verify(Document.model_validate(case["document"]), Extraction.model_validate(case["extraction"]), checked)
     assert "TOTAL_IN_ITEM_SCOPE" in codes(report)
+
+
+def test_inconsistent_line_cannot_hide_behind_total(case, checked):
+    case["document"]["pages"][0]["text"] = case["document"]["pages"][0]["text"].replace("3600.00", "3500.00").replace("4500.00", "4400.00")
+    case["extraction"]["items"][0]["scope"]["quote"] = case["extraction"]["items"][0]["scope"]["quote"].replace("3600.00", "3500.00")
+    case["extraction"]["items"][0]["amount"] = {"value": "3500.00", "evidence": {"page": 1, "quote": "金额 3500.00"}}
+    case["extraction"]["total"] = {"value": "4400.00", "evidence": {"page": 1, "quote": "合计 4400.00"}}
+    report = verify(Document.model_validate(case["document"]), Extraction.model_validate(case["extraction"]), checked)
+    assert "LINE_AMOUNT_MISMATCH" in codes(report)
+    assert "TOTAL_MISMATCH" not in codes(report)
+    assert report.verdict == "BLOCKED"
+
+
+def test_unsupported_precision_stays_review_needed(case, checked):
+    case["document"]["pages"][0]["text"] = case["document"]["pages"][0]["text"].replace("1200.00", "1200.005")
+    case["extraction"]["items"][0]["scope"]["quote"] = case["extraction"]["items"][0]["scope"]["quote"].replace("1200.00", "1200.005")
+    case["extraction"]["items"][0]["unit_price"] = {"value": "1200.005", "evidence": {"page": 1, "quote": "单价 1200.005"}}
+    report = verify(Document.model_validate(case["document"]), Extraction.model_validate(case["extraction"]), checked)
+    assert report.verdict == "NEEDS_REVIEW"
+    assert "UNSUPPORTED_PRECISION" in codes(report)
+
+
+def test_unsupported_currency_not_cleared(case, checked):
+    case["document"]["pages"][0]["text"] = case["document"]["pages"][0]["text"].replace("CNY", "USD")
+    case["extraction"]["currency"] = {"value": "USD", "evidence": {"page": 1, "quote": "币种 USD"}}
+    report = verify(Document.model_validate(case["document"]), Extraction.model_validate(case["extraction"]), checked)
+    assert report.verdict == "NEEDS_REVIEW"
+    assert "UNSUPPORTED_CURRENCY" in codes(report)

@@ -2,9 +2,9 @@
 
 import re
 from decimal import Decimal
-from typing import Literal
+from typing import Annotated, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from pydantic import BaseModel, ConfigDict, Field, WithJsonSchema, field_validator, model_validator
 
 
 class Contract(BaseModel):
@@ -34,7 +34,9 @@ class Evidence(Contract):
 
 
 class NumberField(Contract):
-    value: Decimal | None
+    value: Annotated[Decimal | None, WithJsonSchema({"anyOf": [
+        {"type": "string", "pattern": r"^[0-9]{1,9}(\.[0-9]{1,4})?$"}, {"type": "null"}
+    ]})]
     evidence: Evidence | None
 
     @field_validator("value", mode="before")

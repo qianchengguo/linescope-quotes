@@ -56,11 +56,16 @@ function render(record) {
   $('download').href='/api/runs/'+record.id+'/export';$('download').hidden=false;
 }
 async function perform(button, action) {
-  button.disabled=true;
+  const controls=Array.from(document.querySelectorAll('button,textarea,input'));
+  controls.forEach(control=>{control.disabled=true;});
   try { await action(); } catch(error) {
     resetResult(); $('message').textContent='未生成通过结果：'+error.message;
-  } finally {button.disabled=false;}
+  } finally {controls.forEach(control=>{control.disabled=false;});}
 }
+for (const id of ['source','candidate']) $(id).addEventListener('input',()=>{
+  $('coverage').checked=false;$('pricing').checked=false;resetResult();
+  $('message').textContent='输入已修改，请核对新内容并重新确认。';
+});
 for (const id of ['normal','arithmetic','crossrow']) $(id).addEventListener('click',()=>perform($(id),()=>loadScenario(id)));
 $('verify').addEventListener('click',()=>perform($('verify'),async()=>{
   const document=sourceDocument(), extraction=JSON.parse($('candidate').value);

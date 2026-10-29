@@ -12,6 +12,8 @@ def test_local_adapter_contract(case, parsed):
         assert str(request.url) == "http://127.0.0.1:11434/api/chat"
         assert body["stream"] is False
         assert body["format"]["type"] == "object"
+        value_schema = body["format"]["$defs"]["NumberField"]["properties"]["value"]
+        assert {part["type"] for part in value_schema["anyOf"]} == {"string", "null"}
         assert "review" not in body["format"]["properties"]
         assert "Synthetic fixture" not in str(body)
         return httpx.Response(200, json={"done": True, "message": {
