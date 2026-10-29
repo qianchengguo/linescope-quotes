@@ -15,6 +15,10 @@ Local v0.1.0 **release candidate**, not yet published. Code and documentation ar
 
 示例为**自制模拟文本 + 手工候选抽取**，不是实际客户或模型准确率证据。真实模型实测情况见 [验证记录](docs/validation.md)。
 
+![本地页面实际检查结果](docs/demo-result.jpg)
+
+[查看关键状态 GIF](docs/demo.gif)（实际界面截图合成，非实时录屏；包括模拟候选与自动化复核测试，不代表用户本人验收）。
+
 ## 安装与运行 / Quick start
 
 Python 3.11+。首次安装需要网络下载依赖；安装后无需模型即可运行规则演示。
@@ -77,6 +81,8 @@ python -m build
 ```
 
 结果与环境记录在 [docs/validation.md](docs/validation.md)。规则合成用例的通过率不能当成真实模型抽取准确率。模型本身另行运行 `python scripts/live_smoke.py`，见记录和使用边界。
+
+2026-10-30本机记录：55项自动测试通过；8个合成规则案例符合期望；Ollama真实抽取、错误总额阻止、Docker构建/健康/重启持久化与容器到宿主模型调用已实测。Windows和GitHub远程CI未实测；真实模型只有小样本观察，无准确率或提效保证。
 
 ## 架构 / Architecture
 

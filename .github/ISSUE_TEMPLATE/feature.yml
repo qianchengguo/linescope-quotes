@@ -1,0 +1,16 @@
+name: Feature request
+description: Propose a specific review problem and a small acceptance example
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User, problem and current workaround
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Synthetic input, expected result and scope limits
+      description: Include why existing behavior or a simple template does not solve it.
+    validations:
+      required: true

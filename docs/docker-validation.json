@@ -1,0 +1,16 @@
+{
+  "health": {
+    "status": "ok",
+    "version": "0.1.0",
+    "model_configured": true,
+    "model_reachability": "not_checked"
+  },
+  "first_id": "bb1dd73f-1456-4b46-91e7-4d36b4c5ede1",
+  "revision_id": "c3d0e14a-366e-479a-b254-9d2f7ac3463c",
+  "parent_preserved": true,
+  "export_identical": true,
+  "ai_status": 201,
+  "restart_persistence": true,
+  "ai_verdict": "NEEDS_REVIEW",
+  "scope": "Docker Desktop on this Mac; synthetic source only; model called on host 11435 via host.docker.internal"
+}

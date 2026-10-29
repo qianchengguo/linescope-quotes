@@ -1,0 +1,218 @@
+{
+  "timestamp_utc": "2026-10-29T16:08:24.791533+00:00",
+  "model": "qwen3:1.7b",
+  "prompt_version": "quote-extract-v1",
+  "source": "bundled synthetic source only",
+  "review": {
+    "coverage_confirmed": false,
+    "simple_pricing_confirmed": false,
+    "reviewer": "",
+    "reason": ""
+  },
+  "status": "candidate_received",
+  "document": {
+    "pages": [
+      {
+        "number": 1,
+        "text": "办公设备报价单（自制模拟，无真实客户）\n币种 CNY\nA1 笔记本电脑 | 数量 3 | 单价 1200.00 | 金额 3600.00\nA2 显示器 | 数量 2 | 单价 450.00 | 金额 900.00\n合计 4500.00\n本报价无额外税费、运费或折扣。"
+      }
+    ]
+  },
+  "extraction": {
+    "currency": {
+      "value": "CNY",
+      "evidence": {
+        "page": 1,
+        "quote": "币种 CNY"
+      }
+    },
+    "items": [
+      {
+        "item_id": "A1",
+        "scope": {
+          "page": 1,
+          "quote": "A1 笔记本电脑 | 数量 3 | 单价 1200.00 | 金额 3600.00"
+        },
+        "name": {
+          "value": "A1 笔记本电脑",
+          "evidence": {
+            "page": 1,
+            "quote": "A1 笔记本电脑"
+          }
+        },
+        "quantity": {
+          "value": "3",
+          "evidence": {
+            "page": 1,
+            "quote": "数量 3"
+          }
+        },
+        "unit_price": {
+          "value": "1200.00",
+          "evidence": {
+            "page": 1,
+            "quote": "单价 1200.00"
+          }
+        },
+        "amount": {
+          "value": "3600.00",
+          "evidence": {
+            "page": 1,
+            "quote": "金额 3600.00"
+          }
+        }
+      },
+      {
+        "item_id": "A2",
+        "scope": {
+          "page": 1,
+          "quote": "A2 显示器 | 数量 2 | 单价 450.00 | 金额 900.00"
+        },
+        "name": {
+          "value": "A2 显示器",
+          "evidence": {
+            "page": 1,
+            "quote": "A2 显示器"
+          }
+        },
+        "quantity": {
+          "value": "2",
+          "evidence": {
+            "page": 1,
+            "quote": "数量 2"
+          }
+        },
+        "unit_price": {
+          "value": "450.00",
+          "evidence": {
+            "page": 1,
+            "quote": "单价 450.00"
+          }
+        },
+        "amount": {
+          "value": "900.00",
+          "evidence": {
+            "page": 1,
+            "quote": "金额 900.00"
+          }
+        }
+      }
+    ],
+    "total": {
+      "value": "4500.00",
+      "evidence": {
+        "page": 1,
+        "quote": "合计 4500.00"
+      }
+    },
+    "notes": []
+  },
+  "report": {
+    "verifier_version": "0.1.0",
+    "document_sha256": "a1610232cd0a4dabdcdca29218197855b7da55e494dd6350ef6b844b595caa3e",
+    "verdict": "NEEDS_REVIEW",
+    "findings": [
+      {
+        "code": "COVERAGE_UNCONFIRMED",
+        "severity": "review",
+        "path": "review",
+        "message": "需人工对照原文确认没有漏行、错行"
+      },
+      {
+        "code": "PRICING_SCOPE_UNCONFIRMED",
+        "severity": "review",
+        "path": "review",
+        "message": "需确认无税费、折扣、运费、多币种等额外计算"
+      }
+    ],
+    "anchors": {
+      "currency": {
+        "page": 1,
+        "start": 20,
+        "end": 26
+      },
+      "items.0.scope": {
+        "page": 1,
+        "start": 27,
+        "end": 68
+      },
+      "items.0.name": {
+        "page": 1,
+        "start": 27,
+        "end": 35
+      },
+      "items.0.quantity": {
+        "page": 1,
+        "start": 38,
+        "end": 42
+      },
+      "items.0.unit_price": {
+        "page": 1,
+        "start": 45,
+        "end": 55
+      },
+      "items.0.amount": {
+        "page": 1,
+        "start": 58,
+        "end": 68
+      },
+      "items.1.scope": {
+        "page": 1,
+        "start": 69,
+        "end": 106
+      },
+      "items.1.name": {
+        "page": 1,
+        "start": 69,
+        "end": 75
+      },
+      "items.1.quantity": {
+        "page": 1,
+        "start": 78,
+        "end": 82
+      },
+      "items.1.unit_price": {
+        "page": 1,
+        "start": 85,
+        "end": 94
+      },
+      "items.1.amount": {
+        "page": 1,
+        "start": 97,
+        "end": 106
+      },
+      "total": {
+        "page": 1,
+        "start": 107,
+        "end": 117
+      }
+    },
+    "calculations": [
+      {
+        "path": "items.0",
+        "expected": "3600.00",
+        "actual": "3600.00",
+        "delta": "0.00"
+      },
+      {
+        "path": "items.1",
+        "expected": "900.00",
+        "actual": "900.00",
+        "delta": "0.00"
+      },
+      {
+        "path": "total",
+        "expected": "4500.00",
+        "actual": "4500.00",
+        "delta": "0.00"
+      }
+    ]
+  },
+  "observed_seconds": 13.661,
+  "runtime_evidence": {
+    "ollama_version": "0.40.13",
+    "model_digest": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
+    "hardware": "macOS 26.2 arm64, 24 GiB unified memory"
+  },
+  "manual_observation": "Two items and seven numeric values match the synthetic source. Item names include A1/A2 prefixes, unlike the hand-authored fixture. This is one smoke run, not held-out accuracy or performance evidence."
+}

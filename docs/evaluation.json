@@ -1,0 +1,88 @@
+{
+  "dataset": "8 synthetic verifier cases, manually authored candidates; no model calls",
+  "verifier_version": "0.1.0",
+  "matched": 8,
+  "total": 8,
+  "cases": [
+    {
+      "case": "clean",
+      "expected": "CHECKS_PASSED",
+      "actual": "CHECKS_PASSED",
+      "expected_code": null,
+      "codes": [],
+      "matched": true
+    },
+    {
+      "case": "unreviewed",
+      "expected": "NEEDS_REVIEW",
+      "actual": "NEEDS_REVIEW",
+      "expected_code": "COVERAGE_UNCONFIRMED",
+      "codes": [
+        "COVERAGE_UNCONFIRMED",
+        "PRICING_SCOPE_UNCONFIRMED"
+      ],
+      "matched": true
+    },
+    {
+      "case": "source-total-mismatch",
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "expected_code": "TOTAL_MISMATCH",
+      "codes": [
+        "TOTAL_MISMATCH"
+      ],
+      "matched": true
+    },
+    {
+      "case": "same-page-wrong-item",
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "expected_code": "OUTSIDE_ITEM_SCOPE",
+      "codes": [
+        "OUTSIDE_ITEM_SCOPE"
+      ],
+      "matched": true
+    },
+    {
+      "case": "partial-number",
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "expected_code": "PARTIAL_NUMBER",
+      "codes": [
+        "PARTIAL_NUMBER"
+      ],
+      "matched": true
+    },
+    {
+      "case": "missing-amount",
+      "expected": "NEEDS_REVIEW",
+      "actual": "NEEDS_REVIEW",
+      "expected_code": "MISSING_VALUE",
+      "codes": [
+        "MISSING_VALUE"
+      ],
+      "matched": true
+    },
+    {
+      "case": "ambiguous-total",
+      "expected": "NEEDS_REVIEW",
+      "actual": "NEEDS_REVIEW",
+      "expected_code": "AMBIGUOUS_EVIDENCE",
+      "codes": [
+        "AMBIGUOUS_EVIDENCE"
+      ],
+      "matched": true
+    },
+    {
+      "case": "invented-value",
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "expected_code": "VALUE_NOT_SUPPORTED",
+      "codes": [
+        "VALUE_NOT_SUPPORTED"
+      ],
+      "matched": true
+    }
+  ],
+  "limitation": "Outcome agreement on known synthetic cases is not extraction accuracy or real-world generalization."
+}

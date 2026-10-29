@@ -1,0 +1,140 @@
+{
+  "research_started_china_date": "2026-10-29",
+  "sources": [
+    {
+      "requested_repository": "anguoyang/inferdoctor",
+      "canonical_repository": "anguoyang/inferdoctor",
+      "repository_url": "https://github.com/anguoyang/inferdoctor",
+      "default_branch": "main",
+      "method": "GitHub connector: metadata and README",
+      "readme_url": "https://github.com/anguoyang/inferdoctor/blob/main/README.md",
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    },
+    {
+      "requested_repository": "k8sgpt-ai/k8sgpt",
+      "canonical_repository": "k8sgpt-ai/k8sgpt",
+      "repository_url": "https://github.com/k8sgpt-ai/k8sgpt",
+      "default_branch": "main",
+      "method": "GitHub connector: metadata and README",
+      "readme_url": "https://github.com/k8sgpt-ai/k8sgpt/blob/main/README.md",
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    },
+    {
+      "requested_repository": "robusta-dev/holmesgpt",
+      "canonical_repository": "HolmesGPT/holmesgpt",
+      "repository_url": "https://github.com/HolmesGPT/holmesgpt",
+      "default_branch": "master",
+      "method": "GitHub connector: metadata and README",
+      "readme_url": "https://github.com/HolmesGPT/holmesgpt/blob/master/README.md",
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    },
+    {
+      "requested_repository": "langchain-ai/langgraph",
+      "canonical_repository": "langchain-ai/langgraph",
+      "repository_url": "https://github.com/langchain-ai/langgraph",
+      "default_branch": "main",
+      "method": "GitHub connector: metadata and README",
+      "readme_url": "https://github.com/langchain-ai/langgraph/blob/main/README.md",
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    },
+    {
+      "requested_repository": "dbos-inc/dbos-transact-py",
+      "canonical_repository": "dbos-inc/dbos-transact-py",
+      "repository_url": "https://github.com/dbos-inc/dbos-transact-py",
+      "default_branch": "main",
+      "method": "GitHub connector: metadata and README",
+      "readme_url": "https://github.com/dbos-inc/dbos-transact-py/blob/main/README.md",
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    },
+    {
+      "requested_repository": "temporalio/sdk-python",
+      "canonical_repository": "temporalio/sdk-python",
+      "repository_url": "https://github.com/temporalio/sdk-python",
+      "default_branch": "main",
+      "method": "GitHub connector: metadata and README",
+      "readme_url": "https://github.com/temporalio/sdk-python/blob/main/README.md",
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    },
+    {
+      "requested_repository": "google/langextract",
+      "canonical_repository": "google/langextract",
+      "repository_url": "https://github.com/google/langextract",
+      "default_branch": "main",
+      "method": "GitHub connector: metadata and README",
+      "readme_url": "https://github.com/google/langextract/blob/main/README.md",
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    },
+    {
+      "requested_repository": "docling-project/docling",
+      "canonical_repository": "docling-project/docling",
+      "repository_url": "https://github.com/docling-project/docling",
+      "default_branch": "main",
+      "method": "GitHub connector: metadata and README",
+      "readme_url": "https://github.com/docling-project/docling/blob/main/README.md",
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    },
+    {
+      "requested_repository": "invoice-x/invoice2data",
+      "canonical_repository": "invoice-x/invoice2data",
+      "repository_url": "https://github.com/invoice-x/invoice2data",
+      "default_branch": "master",
+      "method": "GitHub connector: metadata and README",
+      "readme_url": "https://github.com/invoice-x/invoice2data/blob/master/README.md",
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    },
+    {
+      "requested_repository": "promptfoo/promptfoo",
+      "canonical_repository": "promptfoo/promptfoo",
+      "repository_url": "https://github.com/promptfoo/promptfoo",
+      "default_branch": "main",
+      "method": "GitHub connector: metadata and README",
+      "readme_url": "https://github.com/promptfoo/promptfoo/blob/main/README.md",
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    },
+    {
+      "requested_repository": "confident-ai/deepeval",
+      "canonical_repository": "confident-ai/deepeval",
+      "repository_url": "https://github.com/confident-ai/deepeval",
+      "default_branch": "main",
+      "method": "GitHub connector: metadata and README",
+      "readme_url": "https://github.com/confident-ai/deepeval/blob/main/README.md",
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    },
+    {
+      "requested_repository": "explodinggradients/ragas",
+      "canonical_repository": "vibrantlabsai/ragas",
+      "repository_url": "https://github.com/vibrantlabsai/ragas",
+      "default_branch": "main",
+      "method": "GitHub connector: metadata and README",
+      "readme_url": "https://github.com/vibrantlabsai/ragas/blob/main/README.md",
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    },
+    {
+      "requested_repository": "microsoft/presidio",
+      "canonical_repository": "data-privacy-stack/presidio",
+      "repository_url": "https://github.com/data-privacy-stack/presidio",
+      "default_branch": "main",
+      "method": "GitHub connector metadata; README fetch failed, supplemented by browser primary repository page",
+      "readme_url": null,
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    },
+    {
+      "requested_repository": "LeapBeyond/scrubadub",
+      "canonical_repository": "LeapBeyond/scrubadub",
+      "repository_url": "https://github.com/LeapBeyond/scrubadub",
+      "default_branch": "master",
+      "method": "GitHub connector metadata; README fetch failed, supplemented by browser primary repository page",
+      "readme_url": null,
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    },
+    {
+      "requested_repository": "OpenPipe/pii-redaction",
+      "canonical_repository": "OpenPipe/pii-redaction",
+      "repository_url": "https://github.com/OpenPipe/pii-redaction",
+      "default_branch": "main",
+      "method": "GitHub connector: metadata and README",
+      "readme_url": "https://github.com/OpenPipe/pii-redaction/blob/main/README.md",
+      "review_scope": "README and repository description only; not executed or comprehensively audited"
+    }
+  ]
+}
