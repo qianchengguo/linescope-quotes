@@ -1,0 +1,99 @@
+{
+  "document": {
+    "pages": [
+      {
+        "number": 1,
+        "text": "办公设备报价单（自制模拟，无真实客户）\n币种 CNY\nA1 笔记本电脑 | 数量 3 | 单价 1200.00 | 金额 3600.00\nA2 显示器 | 数量 2 | 单价 450.00 | 金额 900.00\n合计 4500.00\n本报价无额外税费、运费或折扣。"
+      }
+    ]
+  },
+  "extraction": {
+    "currency": {
+      "value": "CNY",
+      "evidence": {
+        "page": 1,
+        "quote": "币种 CNY"
+      }
+    },
+    "items": [
+      {
+        "item_id": "A1",
+        "scope": {
+          "page": 1,
+          "quote": "A1 笔记本电脑 | 数量 3 | 单价 1200.00 | 金额 3600.00"
+        },
+        "name": {
+          "value": "笔记本电脑",
+          "evidence": {
+            "page": 1,
+            "quote": "笔记本电脑"
+          }
+        },
+        "quantity": {
+          "value": "3",
+          "evidence": {
+            "page": 1,
+            "quote": "数量 3"
+          }
+        },
+        "unit_price": {
+          "value": "1200.00",
+          "evidence": {
+            "page": 1,
+            "quote": "单价 1200.00"
+          }
+        },
+        "amount": {
+          "value": "3600.00",
+          "evidence": {
+            "page": 1,
+            "quote": "金额 3600.00"
+          }
+        }
+      },
+      {
+        "item_id": "A2",
+        "scope": {
+          "page": 1,
+          "quote": "A2 显示器 | 数量 2 | 单价 450.00 | 金额 900.00"
+        },
+        "name": {
+          "value": "显示器",
+          "evidence": {
+            "page": 1,
+            "quote": "显示器"
+          }
+        },
+        "quantity": {
+          "value": "2",
+          "evidence": {
+            "page": 1,
+            "quote": "数量 2"
+          }
+        },
+        "unit_price": {
+          "value": "450.00",
+          "evidence": {
+            "page": 1,
+            "quote": "单价 450.00"
+          }
+        },
+        "amount": {
+          "value": "900.00",
+          "evidence": {
+            "page": 1,
+            "quote": "金额 900.00"
+          }
+        }
+      }
+    ],
+    "total": {
+      "value": "4500.00",
+      "evidence": {
+        "page": 1,
+        "quote": "合计 4500.00"
+      }
+    },
+    "notes": []
+  }
+}

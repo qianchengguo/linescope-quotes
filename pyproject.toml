@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linescope-quotes"
+version = "0.1.0"
+description = "Item-scoped evidence checks for AI-extracted equipment quotations"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["fastapi>=0.115,<1", "pydantic>=2.10,<3", "httpx>=0.28,<1", "uvicorn>=0.34,<1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "build>=1,<2"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["linescope*"]
+
+[tool.setuptools.package-data]
+linescope = ["static/*.html", "static/*.js", "static/*.css", "demo.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
