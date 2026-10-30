@@ -8,7 +8,7 @@ from linescope.models import Document, Extraction, Review
 
 @pytest.fixture
 def case():
-    return json.loads((Path(__file__).parents[1] / "src/linescope/demo.json").read_text())
+    return json.loads((Path(__file__).parents[1] / "src/linescope/demo.json").read_text(encoding="utf-8"))
 
 
 @pytest.fixture
