@@ -1,4 +1,4 @@
-# v0.1.0 Release 草稿：待用户检查，未公开发布
+# v0.1.0 发布说明
 
 标题：LineScope Quotes v0.1.0 — item-scoped quotation evidence checks
 
@@ -18,13 +18,12 @@
 
 无PDF/OCR、复杂税费/折扣、多币种、自动完整性/语义证明、身份认证或防篡改审计。scope是候选，需要人核对。仅本地单人，不宜直接开放公网。模型、OCR或格式失败不能包装成已解决。
 
-## 用户检查后才执行的发布步骤
+## 发布验证
 
-1. 查看 `git diff`、拟发布文件、README的效果表述和作者信息；确认样本授权、LICENSE与忽略项。`.local`、模型、实际数据库、`.env`都不上传。
-2. 将 README 的 clone 占位符替换为用户确认的真实仓库地址。
-3. 用户明确授权公开发布后，创建或关联实际 GitHub 仓库、推送；不得推送未经检查的内容。
-4. 观察实际 GitHub Actions，各平台未跑过就不能宣称已通过。
-5. 从公开仓库干净克隆验证安装、核心演示和离线重放；必要时修复并重新验证。
-6. 再创建 `v0.1.0` tag 和真实 GitHub Release，附本草稿及可核查验证记录。
+- [公开源码](https://github.com/qianchengguo/linescope-quotes)，原创代码、文档和模拟样例采用MIT许可。
+- 从公开HTTPS地址重新克隆并安装，55项测试、8个规则案例、打包和API烟测通过。
+- [GitHub CI](https://github.com/qianchengguo/linescope-quotes/actions/runs/41077223158)的Ubuntu/Python3.12与3.14、macOS/Python3.12、Windows/Python3.12，以及Linux Docker作业均通过。
+- 首次Windows中文样例默认编码错误已修复，详情及现存依赖警告见验证记录。
+- Ollama实测使用自制模拟文本，没有真实用户数量、泛化准确率或提效比例声明。
 
-当前不创建虚假的远程仓库链接或已发布徽章。创建本地候选版本不等于完成公开开源发布。
+模型权重、第三方安装包、真实数据库、本地环境及密钥不在发布内容中；模型保留自己的许可证。实际Release标签和下载文件以[GitHub Releases](https://github.com/qianchengguo/linescope-quotes/releases)为准。

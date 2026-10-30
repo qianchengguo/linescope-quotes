@@ -1,6 +1,6 @@
 # 验证记录：实际运行与待验收项
 
-调研开始于2026-10-29，下面本机验证完成于2026-10-30（北京时间）。这是 Codex 执行的建设与验证，不等于用户个人技能验收。原有学习知识库和求职资料未修改；新项目单独建仓，尚无GitHub远程、tag或已发布Release。
+调研开始于2026-10-29，下面本机验证完成于2026-10-30（北京时间）。这是 Codex 执行的建设与验证，不等于用户个人技能验收。原有学习知识库和求职资料未修改；新项目单独建仓，公开仓库为[GitHub上的LineScope Quotes](https://github.com/qianchengguo/linescope-quotes)。公开克隆与远程CI的新增验证见末尾。
 
 ## 环境
 
@@ -45,8 +45,7 @@
 
 ## 仍未完成 / 不能宣称通过
 
-- Windows本机、Intel Mac的实际安装和模型运行。
-- GitHub远程CI、公开clone、公开Release v0.1.0；用户尚未检查和授权公开推送。
+- Windows用户电脑、Intel Mac的实际部署与模型推理；GitHub托管Windows测试通过不等于这些场景均已验收。
 - 独立未见样本集的字段准确率/漏行率、模板抽取公平基线、人工用户试用。
 - PDF/OCR、复杂计价、身份认证、自动完整性证明、语义蕴含证明或防篡改审计。
 - 用户本人独立修改、解释、部署与故障定位能力；`personal-understanding.md`保持未填写。
@@ -64,3 +63,21 @@
 这是**本地干净克隆和安装验收**，不是GitHub公开clone或Windows验收。后续改动仅为验证记录和演示截图裁切；运行代码对应上述提交及之前代码提交。临时测试环境和原始日志留在被忽略的`.local`。
 
 Docker测试项目`linescope-review`验证结束后已停止其app容器，保留命名卷和现有Docker Desktop；本机原生服务8765与项目专用Ollama11435保留供检查。官方Docker DMG测试挂载已正常卸载，下载文件保留。
+
+## 2026-10-30 公开仓库与远程CI验证
+
+用户授权公开发布到`qianchengguo/linescope-quotes`。通过HTTPS从该公开地址重新克隆，创建独立venv，按README安装`.[dev]`；拉取修复提交`da734d64674d3e7ae08c37af7fcaf589bcf907a0`后，55项测试通过、8/8规则案例符合期望、wheel/sdist构建成功，页面资源、内置样例与API创建待复核记录均通过烟测。该环境解析到Pydantic2.14.2；原本机锁定记录仍保留其当时版本，不混写为同一环境。
+
+首次[远程CI](https://github.com/qianchengguo/linescope-quotes/actions/runs/41076005395)仅Windows测试失败，日志显示`tests/conftest.py`用系统默认cp1252读取中文UTF-8样例，产生UnicodeDecodeError。本地用cp1252复现后，只为该读取补上`encoding="utf-8"`，没有跳过或削弱测试。
+
+修复后的[CI运行41077223158](https://github.com/qianchengguo/linescope-quotes/actions/runs/41077223158)实际显示Success，共5项作业通过：
+
+- Ubuntu / Python3.12：测试、规则评估与打包。
+- Ubuntu / Python3.14：测试、规则评估与打包。
+- macOS / Python3.12：测试、规则评估与打包。
+- Windows / Python3.12：测试、规则评估与打包。
+- Linux Docker：构建、启动、健康检查与清理测试容器。
+
+远程运行仍有Actions的Node.js版本迁移警告和托管runner通知；本机仍有Starlette TestClient的httpx弃用警告。它们没有导致这次检查失败，也没有被隐藏。后续依赖更新需单独验证。
+
+公开发布历史使用GitHub noreply邮箱；原始本机历史仅保留在本地备份分支，因此前文的旧本地commit编号不是公开仓库的检出入口。公开复现应使用上方实际GitHub提交或Release标签。密钥、模型、安装文件、数据库、原始日志及本地备份分支未上传。

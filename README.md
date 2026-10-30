@@ -1,5 +1,7 @@
 # LineScope Quotes
 
+[![Tests](https://github.com/qianchengguo/linescope-quotes/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/qianchengguo/linescope-quotes/actions/workflows/ci.yml)
+
 **每个数值都有自己的明细范围。AI 抽取设备报价，代码检查引用串行与金额矛盾，人工确认漏行和适用范围。**
 
 **Item-scoped evidence checks for AI-extracted equipment quotations.** A number appearing somewhere on the page is insufficient: its evidence must belong to the current item. Decimal arithmetic, explicit review gates and immutable application revisions make failures reproducible.
@@ -82,7 +84,7 @@ python -m build
 
 结果与环境记录在 [docs/validation.md](docs/validation.md)。规则合成用例的通过率不能当成真实模型抽取准确率。模型本身另行运行 `python scripts/live_smoke.py`，见记录和使用边界。
 
-2026-10-30本机记录：55项自动测试通过；8个合成规则案例符合期望；Ollama真实抽取、错误总额阻止、Docker构建/健康/重启持久化与容器到宿主模型调用已实测。Windows和GitHub远程CI未实测；真实模型只有小样本观察，无准确率或提效保证。
+2026-10-30验证：本机55项自动测试通过，8个合成规则案例符合期望；Ollama真实抽取、错误总额阻止、Docker构建/健康/重启持久化与容器到宿主模型调用已实测。[GitHub CI](https://github.com/qianchengguo/linescope-quotes/actions/runs/41077223158)的Windows/macOS/Linux测试与构建、Linux Docker健康检查已通过。Windows本机模型推理未实测；真实模型只有小样本观察，无准确率或提效保证。
 
 ## 架构 / Architecture
 
@@ -115,7 +117,7 @@ Compose 仅映射宿主机 `127.0.0.1:8765`，命名卷保留数据库。容器�
 - [18 天开发与独立验收计划](docs/development-plan.md)
 - [面试讲解、岗位版本与 15 个追问](docs/interview.md)
 - [运行操作介绍稿](docs/运行操作介绍稿.md)
-- [贡献说明](CONTRIBUTING.md) · [v0.1.0 发布草稿](docs/release-v0.1.0.md)
+- [贡献说明](CONTRIBUTING.md) · [v0.1.0 发布说明](docs/release-v0.1.0.md)
 
 ## English overview
 
