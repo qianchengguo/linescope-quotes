@@ -4,7 +4,7 @@
 
 **Item-scoped evidence checks for AI-extracted equipment quotations.** A number appearing somewhere on the page is insufficient: its evidence must belong to the current item. Decimal arithmetic, explicit review gates and immutable application revisions make failures reproducible.
 
-Local v0.1.0 **release candidate**, not yet published. Code and documentation are assisted by Codex; the learner's independently understood work must be recorded separately.
+v0.1.0 local, single-user prototype. Code and documentation are assisted by Codex; the learner's independently understood work must be recorded separately. See the validation record for measured results and limitations.
 
 ## 60 秒看点 / Demo
 
@@ -24,7 +24,7 @@ Local v0.1.0 **release candidate**, not yet published. Code and documentation ar
 Python 3.11+。首次安装需要网络下载依赖；安装后无需模型即可运行规则演示。
 
 ```bash
-git clone <发布后填入你的实际 GitHub 仓库地址>
+git clone https://github.com/qianchengguo/linescope-quotes.git
 cd linescope-quotes
 python -m venv .venv
 # macOS / Linux
@@ -36,7 +36,7 @@ python -m uvicorn linescope.app:app --host 127.0.0.1 --port 8765 --no-access-log
 
 打开 <http://127.0.0.1:8765>。Windows 不能激活时可用 `.venv\Scripts\python.exe -m ...`；macOS/Linux 可用 `.venv/bin/python -m ...`。当前目录需可写；数据库默认在 `data/`。
 
-上方 clone 地址是待发布占位符；当前可直接进入这份本地目录开始 `python -m venv`。没有虚构公开仓库链接。
+仓库中的 `.local/`、模型权重、实际数据库和 `.env` 不随代码发布。首次克隆后按上述步骤创建环境。
 
 ### 本地 AI 抽取 / Optional local inference
 
@@ -114,6 +114,7 @@ Compose 仅映射宿主机 `127.0.0.1:8765`，命名卷保留数据库。容器�
 - [系统设计、API、数据和安全边界](docs/architecture.md)
 - [18 天开发与独立验收计划](docs/development-plan.md)
 - [面试讲解、岗位版本与 15 个追问](docs/interview.md)
+- [运行操作介绍稿](docs/运行操作介绍稿.md)
 - [贡献说明](CONTRIBUTING.md) · [v0.1.0 发布草稿](docs/release-v0.1.0.md)
 
 ## English overview
